@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "watch:sass": "sass --watch src/sass:src/css",
-    "build:sass": "sass src/sass:_site/css --style=compressed --no-source-map",
+    "build:sass": "sass --no-source-map --style=compressed src/sass:src/css",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
     "start": "concurrently \"yarn:watch:*\"",
