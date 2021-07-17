@@ -1,0 +1,48 @@
+{% from "_macros/_project.njk" import project %}
+
+<section class="projects">
+	<h2 class="text__center">Projects🛠️</h2>
+	<div class="projects__list">
+		{{
+			project(
+					{
+						thumbnail: '/assets/go-wallpaper-600x300.png',
+						title: 'go-wallpaper',
+						summary: "go-wallpaper is a cli tool for setting random wallpapers for Windows. It is built with Golang and inspired by <a class='text__highlight' href='https://github.com/thevinter/styli.sh' target='_blank' rel='noopener noreferrer'>styli.sh</a>",
+						techs: ['Golang'],
+						links: [
+							{url: 'https://github.com/HarshaVardhanNakkina/go-wallpaper', name: 'github'}
+						]
+					}
+				)
+		}}
+		{{
+			project(
+					{
+						thumbnail: '/assets/SpaceX-Launches-600x300.png',
+						title: 'SpaceX Launches',
+						summary: "This is a small web application for displaying the details of SpaceX Launches.  It has responsive UI, PWA support, pagination.",
+						techs: ['React.js', 'GraphQL', 'Chakra UI'],
+						links: [
+							{url: 'https://github.com/HarshaVardhanNakkina/spacex-graphql-api', name: 'github'},
+							{url: 'https://spacex-graphql-api.vercel.app/', name: 'live'}
+						]
+					}
+				)
+		}}
+		{{
+			project(
+					{
+						thumbnail: '/assets/recipe-page-600x300.png',
+						title: 'Recipe Page Challenge',
+						summary: "It is a responsive web design challenge I did from <a class='text__highlight' href='https://devchallenges.io/challenges/OEKdUZ6xs0h99C38XVht' target='_blank' rel='noopener noreferrer'>devchallenges.io</a>",
+						techs: ['HTML', 'CSS'],
+						links: [
+							{url: 'https://github.com/HarshaVardhanNakkina/recipe-page', name: 'github'},
+							{url: 'http://recipe-page-ten.vercel.app/', name: 'live'}
+						]
+					}
+				)
+		}}
+	</div>
+</section>

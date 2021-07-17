@@ -1,0 +1,51 @@
+.projects {
+  --flow-spacer: 0.75em;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+}
+
+.project {
+  max-width: 400px;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 14px;
+  border: 2px solid var(--clr-neutral-200);
+
+  --flow-spacer: 0.5em;
+
+  &__img {
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+  }
+
+  &__info {
+    max-width: 75ch;
+  }
+
+  &__tech,
+  &__links {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: var(--flow-spacer);
+  }
+}
+
+.tech__name {
+  font-family: monospace;
+  color: inherit;
+  background-color: hsla(0, 0%, 60%, 0.15);
+
+  padding: 0.25em;
+  border-radius: 4px;
+}

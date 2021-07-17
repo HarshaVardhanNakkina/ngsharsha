@@ -1,0 +1,25 @@
+{% macro project(params) %}
+	<div class="project flow">
+		<div class="project__img">
+			<img src="{{ params.thumbnail | url }}" alt="project thumbnail" loading="lazy" width="600">
+		</div>
+		<div class="project__info flow">
+			<h3 class="project__title">{{ params.title }}</h3>
+			<p class="project__summary text__normal text__secondary">
+				{{ params.summary | safe }}
+			</p>
+			<ul role="list" class="project__tech text__small text__secondary">
+				{% for tech in params.techs %}
+					<li class="tech__name">{{tech}}</li>
+				{% endfor %}
+			</ul>
+			<ul role="list" class="project__links text__small">
+				{% for link in params.links %}
+					<li class="btn btn--small nav__link">
+						<a class="text__highlight" href="{{link.url}}"  target="_blank" rel="noopener noreferrer">{{link.name}}&#x2197;</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endmacro %}

@@ -1,0 +1,21 @@
+{% from "_macros/_icons.njk" import twitter,
+linkedin,
+github,
+instagram %}
+
+{% macro contacts(params) %}
+	<div class="contact">
+		<a class="contact__link contact--github"href="https://github.com/HarshaVardhanNakkina" target="_blank" rel="noopener noreferrer">
+			{{github({width: params.width, height: params.height})}}
+		</a>
+		<a class="contact__link contact--linkedin"href="https://www.linkedin.com/in/harsha-vardhan-nakkina-447b721b4/" target="_blank" rel="noopener noreferrer">
+			{{linkedin({width: params.width, height: params.height})}}
+		</a>
+		<a class="contact__link contact--twitter"href="https://twitter.com/Ganeshh___" target="_blank" rel="noopener noreferrer">
+			{{twitter({width: params.width, height: params.height})}}
+		</a>
+		<a class="contact__link contact--instagram"href="https://www.instagram.com/n__harsha__/" target="_blank" rel="noopener noreferrer">
+			{{instagram({width: params.width, height: params.height})}}
+		</a>
+	</div>
+{% endmacro %}

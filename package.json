@@ -1,0 +1,25 @@
+{
+  "name": "ngsharsha",
+  "version": "1.0.0",
+  "description": "portfolio website",
+  "main": "index.js",
+  "repository": "https://github.com/HarshaVardhanNakkina/ngsharsha",
+  "author": "HarshaVardhanNakkina <harshavardhan.n@yahoo.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "watch:sass": "sass --watch src/sass:src/css",
+    "build:sass": "sass src/sass:_site/css --style=compressed --no-source-map",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "start": "concurrently \"yarn:watch:*\"",
+    "build": "concurrently \"yarn:build:*\""
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "concurrently": "^6.2.0",
+    "eleventy-plugin-lazyimages": "^2.1.0",
+    "markdown-it": "^12.1.0",
+    "sass": "^1.35.2"
+  }
+}

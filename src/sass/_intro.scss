@@ -1,0 +1,43 @@
+.intro {
+  padding: 0;
+}
+
+.contact {
+  margin-top: 1em;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--flex-gap, 1em);
+
+  &__link {
+    color: var(--clr-neutral-500);
+  }
+
+  &--twitter {
+    &:focus,
+    &:hover {
+      color: var(--clr-twitter);
+      // color: var(--clr-neutral-100);
+    }
+  }
+  &--github {
+    &:focus,
+    &:hover {
+      color: var(--clr-github);
+      // color: var(--clr-neutral-100);
+    }
+  }
+  &--linkedin {
+    &:focus,
+    &:hover {
+      color: var(--clr-linkedin);
+      // color: var(--clr-neutral-100);
+    }
+  }
+  &--instagram {
+    &:focus,
+    &:hover {
+      color: var(--clr-instagram);
+    }
+  }
+}

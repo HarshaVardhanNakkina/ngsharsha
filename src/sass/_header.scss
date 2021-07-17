@@ -1,0 +1,73 @@
+/* //////////////////////
+  Header
+  /////////////////////// */
+@use './break-points' as bp;
+
+.page-header {
+  padding: 1em 0;
+  font-family: var(--ff-heading);
+}
+
+.page-header__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: bp.$mobile) {
+    justify-content: space-between;
+  }
+}
+
+.nav-list {
+  width: 100%;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (min-width: bp.$mobile) {
+    width: max-content;
+    ul {
+      justify-content: center;
+    }
+  }
+}
+
+.nav__link {
+  color: var(--clr-neutral-500);
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:focus-within,
+  &:hover {
+    border-radius: 1rem;
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-accent-300);
+  }
+
+  &--twitter {
+    &:focus-within,
+    &:hover {
+      background-color: var(--clr-twitter);
+    }
+  }
+}
+
+.nav__link {
+  &--brand {
+    display: none;
+    @media screen and (min-width: bp.$mobile) {
+      display: block;
+      margin-right: auto;
+    }
+  }
+  &--home {
+    display: block;
+    @media screen and (min-width: bp.$mobile) {
+      display: none;
+    }
+  }
+}

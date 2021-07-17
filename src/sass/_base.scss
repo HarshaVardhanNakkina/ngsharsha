@@ -1,0 +1,39 @@
+/* //////////////////////
+  General styling
+  /////////////////////// */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-500);
+  background-color: var(--clr-neutral-100);
+  transition: color 150ms ease-in, background-color 250ms ease-in;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-700);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--fs-700);
+}
+
+h2 {
+  font-size: var(--fs-600);
+}
+
+h3 {
+  font-size: var(--fs-500);
+}
+
+strong {
+  font-weight: var(--fw-700);
+}
+
+main {
+  margin-top: 2rem;
+}

@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Zilla+Slab:wght@700&display=swap");
+:root {
+  --fs-300: 0.9375rem;
+  --fs-400: 1.0625rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.875rem;
+  --fs-700: 2rem;
+  --ff-body: "Inter", sans-serif;
+  --ff-heading: "Zilla Slab", serif;
+  --fw-400: 400;
+  --fw-700: 700;
+  --clr-accent-100: hsla(260, 100%, 95%, 1);
+  --clr-accent-200: hsla(260, 100%, 75%, 1);
+  --clr-accent-300: hsla(271, 100%, 59%, 1);
+  --clr-accent-400: hsla(271, 69%, 48%, 1);
+  --clr-accent-500: hsla(271, 68%, 32%, 1);
+  --clr-neutral-100: hsla(0, 0%, 100%, 1);
+  --clr-neutral-200: hsla(0, 0%, 60%, 1);
+  --clr-neutral-300: hsla(0, 0%, 50%, 1);
+  --clr-neutral-400: hsla(0, 0%, 40%, 1);
+  --clr-neutral-500: hsla(0, 0%, 10%, 1);
+  --clr-twitter: hsla(206, 82%, 63%, 1);
+  --clr-github: hsla(102, 53%, 52%, 1);
+  --clr-linkedin: hsla(201, 100%, 35%, 1);
+  --clr-instagram: hsla(340, 75%, 54%, 1);
+}
+
+[data-theme=dark] {
+  --clr-accent-100: hsla(91, 100%, 95%, 1);
+  --clr-accent-200: hsla(91, 100%, 71%, 1);
+  --clr-accent-400: hsla(91, 100%, 41%, 1);
+  --clr-accent-300: hsla(91, 100%, 31%, 1);
+  --clr-accent-500: hsla(91, 100%, 15%, 1);
+  --clr-neutral-500: hsla(0, 0%, 100%, 1);
+  --clr-neutral-400: hsla(0, 0%, 60%, 1);
+  --clr-neutral-300: hsla(0, 0%, 50%, 1);
+  --clr-neutral-200: hsla(0, 0%, 40%, 1);
+  --clr-neutral-100: hsla(0, 0%, 10%, 1);
+}
+
+@media (min-width: 35em) {
+  :root {
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.5rem;
+    --fs-600: 2.25rem;
+    --fs-700: 3rem;
+  }
+}
+/* //////////////////////
+  RESET - source: https://piccalil.li/blog/a-modern-css-reset
+  /////////////////////// */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul:where([role="list"]),
+ol:where([role="list"]) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* //////////////////////
+  Utility Classes
+  /////////////////////// */
+/* select all direct childen of .flow
+   and add margin to the top for proper
+   spacing */
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-spacer, 1.5em);
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: 1.5em;
+  max-width: 72rem;
+}
+.container--narrow {
+  max-width: 65rem;
+}
+.container--small {
+  max-width: 45rem;
+}
+
+.text__normal {
+  font-size: var(--fs-400);
+}
+
+.text__small {
+  font-size: var(--fs-300);
+}
+
+.text__center {
+  text-align: center;
+}
+
+.text__highlight {
+  color: var(--clr-accent-300);
+}
+
+.text__highlight--mono {
+  font-family: monospace;
+}
+
+.text__primary {
+  color: var(--clr-neutral-500);
+}
+
+.text__secondary {
+  color: var(--clr-neutral-400);
+}
+
+.btn {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  padding: 0.75em 1.75em;
+  border-radius: 0.25em;
+}
+
+.btn:focus {
+  outline: 0.125em solid var(--clr-primary-400);
+  outline-offset: 0.25em;
+}
+
+.btn--small {
+  padding: 0.25em 0.5em;
+}
+
+.btn--primary {
+  background: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-700);
+  border: 2px solid var(--clr-primary-400);
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background: var(--clr-primary-500);
+  border-color: var(--clr-primary-500);
+}
+
+.btn--neutral {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-500);
+  font-weight: var(--fw-700);
+  border: 2px solid var(--clr-neutral-500);
+}
+
+.btn--neutral:hover,
+.btn--neutral:focus {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-500);
+}
+
+/* //////////////////////
+  General styling
+  /////////////////////// */
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-500);
+  background-color: var(--clr-neutral-100);
+  transition: color 150ms ease-in, background-color 250ms ease-in;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-700);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--fs-700);
+}
+
+h2 {
+  font-size: var(--fs-600);
+}
+
+h3 {
+  font-size: var(--fs-500);
+}
+
+strong {
+  font-weight: var(--fw-700);
+}
+
+main {
+  margin-top: 2rem;
+}
+
+/* //////////////////////
+  Header
+  /////////////////////// */
+.page-header {
+  padding: 1em 0;
+  font-family: var(--ff-heading);
+}
+
+.page-header__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 425px) {
+  .page-header__content {
+    justify-content: space-between;
+  }
+}
+
+.nav-list {
+  width: 100%;
+}
+.nav-list ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 425px) {
+  .nav-list {
+    width: max-content;
+  }
+  .nav-list ul {
+    justify-content: center;
+  }
+}
+
+.nav__link {
+  color: var(--clr-neutral-500);
+}
+.nav__link a {
+  text-decoration: none;
+  color: inherit;
+}
+.nav__link:focus-within, .nav__link:hover {
+  border-radius: 1rem;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-accent-300);
+}
+.nav__link--twitter:focus-within, .nav__link--twitter:hover {
+  background-color: var(--clr-twitter);
+}
+
+.nav__link--brand {
+  display: none;
+}
+@media screen and (min-width: 425px) {
+  .nav__link--brand {
+    display: block;
+    margin-right: auto;
+  }
+}
+.nav__link--home {
+  display: block;
+}
+@media screen and (min-width: 425px) {
+  .nav__link--home {
+    display: none;
+  }
+}
+
+.intro {
+  padding: 0;
+}
+
+.contact {
+  margin-top: 1em;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--flex-gap, 1em);
+}
+.contact__link {
+  color: var(--clr-neutral-500);
+}
+.contact--twitter:focus, .contact--twitter:hover {
+  color: var(--clr-twitter);
+}
+.contact--github:focus, .contact--github:hover {
+  color: var(--clr-github);
+}
+.contact--linkedin:focus, .contact--linkedin:hover {
+  color: var(--clr-linkedin);
+}
+.contact--instagram:focus, .contact--instagram:hover {
+  color: var(--clr-instagram);
+}
+
+.projects {
+  --flow-spacer: 0.75em;
+}
+.projects__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.project {
+  max-width: 400px;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 14px;
+  border: 2px solid var(--clr-neutral-200);
+  --flow-spacer: 0.5em;
+}
+.project__img img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.project__info {
+  max-width: 75ch;
+}
+.project__tech, .project__links {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: var(--flow-spacer);
+}
+
+.tech__name {
+  font-family: monospace;
+  color: inherit;
+  background-color: rgba(153, 153, 153, 0.15);
+  padding: 0.25em;
+  border-radius: 4px;
+}
+
+footer {
+  --flex-gap: 1em;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
