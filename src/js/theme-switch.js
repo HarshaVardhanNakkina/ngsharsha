@@ -1,7 +1,9 @@
 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const theme = localStorage.getItem('theme');
-const temp = (theme && theme === 'dark') || prefersDarkMode ? 'dark' : 'light';
-// const temp = theme && theme === 'dark' ? 'dark' : 'light';
+let temp;
+if (theme) temp = theme;
+else if (prefersDarkMode) temp = 'dark';
+else temp = 'light';
 storeAndSwitch(temp);
 
 function switchTheme() {
