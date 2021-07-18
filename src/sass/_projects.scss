@@ -35,7 +35,7 @@
   &__tech,
   &__links {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     gap: var(--flow-spacer);
   }
