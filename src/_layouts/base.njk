@@ -17,6 +17,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Zilla+Slab:wght@700&display=swap" rel="stylesheet">
+		<link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 		<link rel="shortcut icon" href="{{ '/assets/favicon.ico' | url }}" type="image/x-icon">
 		<link rel="icon" href="{{ '/assets/favicon.ico' | url }}" type="image/x-icon">
 		<title>{{ title }}</title>
@@ -27,11 +28,11 @@
 				.matches;
 			var theme = localStorage.getItem('theme');
 			var temp;
-			if (theme) 
+			if (theme)
 				temp = theme;
-			else if (prefersDarkMode) 
+			else if (prefersDarkMode)
 				temp = 'dark';
-			else 
+			else
 				temp = 'light';
 			storeAndSwitch(temp);
 

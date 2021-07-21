@@ -8,9 +8,9 @@
 			<p class="project__summary text__normal text__secondary">
 				{{ params.summary | safe }}
 			</p>
-			<ul role="list" class="project__tech text__small text__secondary">
+			<ul role="list" class="project__tags text__small text__secondary">
 				{% for tech in params.techs %}
-					<li class="tech__name">{{tech}}</li>
+					<li class="tag__name">{{tech}}</li>
 				{% endfor %}
 			</ul>
 			<ul role="list" class="project__links text__small">

@@ -78,3 +78,8 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+code[class*='language-'],
+pre[class*='language-'] {
+  margin: 0.75em 0;
+}
