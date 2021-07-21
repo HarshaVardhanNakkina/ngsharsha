@@ -14,19 +14,19 @@
     "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
     "start": "concurrently \"yarn:watch:sass\" \"yarn:watch:eleventy\"",
     "build": "concurrently \"yarn:build:sass\" \"yarn:build:eleventy\"",
-    "postbuild": "postcss _site/css/*.css -u autoprefixer cssnano -r --no-map"
+    "postbuild": "postcss _site/css/*.css -u autoprefixer postcss-csso -r"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^10.3.1",
     "concurrently": "^6.2.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.0.6",
     "eleventy-plugin-lazyimages": "^2.1.0",
     "html-minifier-terser": "^5.1.1",
     "markdown-it": "^12.1.0",
     "postcss": "^8.3.5",
     "postcss-cli": "^8.3.1",
+    "postcss-csso": "^5.0.1",
     "sass": "^1.35.2"
   }
 }
