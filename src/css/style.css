@@ -99,6 +99,8 @@ a:not([class]) {
 img,
 picture {
   max-width: 100%;
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -411,7 +413,6 @@ main {
   color: var(--clr-neutral-400);
   font-family: var(--ff-heading);
   font-size: var(--fs-300);
-  margin-top: 0.5em;
 }
 
 footer {

@@ -23,13 +23,11 @@ module.exports = function (eleventyConfig) {
     return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
   });
 
-  if (process.env.ELEVENTY_ENV === 'production') {
-    eleventyConfig.addPlugin(lazyImagesPlugin, {
-      imgSelector: '.project__img img',
-      preferNativeLazyLoad: false,
-      cacheFile: ''
-    });
-  }
+  eleventyConfig.addPlugin(lazyImagesPlugin, {
+    imgSelector: 'img',
+    preferNativeLazyLoad: false,
+    cacheFile: ''
+  });
 
   if (process.env.ELEVENTY_ENV === 'production') {
     eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
