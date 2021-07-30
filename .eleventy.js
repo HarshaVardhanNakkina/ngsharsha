@@ -2,6 +2,7 @@ const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 const markdownIt = require('markdown-it');
 const minify = require('html-minifier-terser').minify;
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const emojiReadTime = require('@11tyrocks/eleventy-plugin-emoji-readtime');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/sass');
@@ -9,7 +10,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/assets');
   eleventyConfig.setDataDeepMerge(true);
+
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(emojiReadTime);
 
   let options = {
     html: true
