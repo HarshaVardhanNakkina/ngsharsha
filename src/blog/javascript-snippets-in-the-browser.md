@@ -53,7 +53,7 @@ After writing the code, click on the run button or hit <kbd>ctrl</kbd> + <kbd>en
 
 ### Note
 
-We can run the code multiple times in Chrome. But in Firefox, it gives **_redeclaration_** error if we try to run the code multiple times.
+We can run the code multiple times in Chrome without any errors. But Firefox gives **_redeclaration_** error if we try to run the code multiple times.
 
 <figure>
 	<img src="{{ '/assets/devtools_snippets_note.jpg' | url }}" alt="Redeclaration Error">
