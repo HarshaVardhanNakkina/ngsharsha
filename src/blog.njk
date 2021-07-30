@@ -2,21 +2,25 @@
 title: 'Blog - HarshaVardhan'
 layout: 'base.njk'
 ---
-<section class="container container--small articles__listing">
-	<ul role="list" class="flow">
+
+<section class="articles__listing">
+	<ul role="list" class="article__list">
 		{% for post in collections.posts | reverse %}
-			<li class="article__snippet">
+			<li class="article__snippet flow">
 				<a class="article__link" href="{{post.url}}">{{post.data.title}}</a>
-				<p class="article__date">
-					{{ post.data.date | humanDate }}
-				</p>
-				<p class="tags">
-					{% for tag in post.data.tags %}
-						{% if tag != 'posts'%}
-							<span class="tag__name text__secondary text__small">{{tag}}</span>
-						{% endif %}
-					{% endfor %}
-				</p>
+				<div class="article__meta">
+					<p class="article__date">
+						{{ post.data.date | humanDate }}
+					</p>
+					<p class="article__tags">
+						{% for tag in post.data.tags %}
+							{% if tag != 'posts' %}
+								<span class="tag__name text__secondary text__small">{{tag}}</span>
+							{% endif %}
+						{% endfor %}
+					</p>
+				</div>
+				<p class="article__abstract text__secondary">{{post.data.abstract}}</p>
 			</li>
 		{% endfor %}
 	</ul>

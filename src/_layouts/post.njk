@@ -1,0 +1,27 @@
+---
+layout: 'base.njk'
+---
+<section>
+	<article class="article flow">
+		<header class="article__header">
+			<h1 class="article__title">{{ title }}</h1>
+			<div class="article__meta">
+				<p class="article__date">
+					{{ date | humanDate }}
+					&nbsp;
+					|
+					&nbsp;
+					{{ content | emojiReadTime  }}
+				</p>
+				<p class="article__tags">
+					{% for tag in tags %}
+						{% if tag != 'posts' %}
+							<span class="tag__name text__secondary text__small">{{tag}}</span>
+						{% endif %}
+					{% endfor %}
+				</p>
+			</div>
+		</header>
+		{{ content | safe }}
+	</article>
+</section>
