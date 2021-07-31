@@ -4,10 +4,8 @@
 }
 
 .article {
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  a {
+    color: var(--clr-accent-300);
   }
 
   &__title,
@@ -15,6 +13,12 @@
   h3 {
     text-transform: capitalize;
     color: var(--clr-accent-400);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   &__abstract {

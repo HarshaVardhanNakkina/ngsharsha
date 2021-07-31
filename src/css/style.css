@@ -462,16 +462,19 @@ strong {
   padding: 0;
 }
 
-.article__list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.article a {
+  color: var(--clr-accent-300);
 }
 .article__title,
 .article h2,
 .article h3 {
   text-transform: capitalize;
   color: var(--clr-accent-400);
+}
+.article__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 .article__abstract {
   max-width: 75ch;
