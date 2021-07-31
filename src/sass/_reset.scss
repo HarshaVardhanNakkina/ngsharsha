@@ -52,7 +52,16 @@ a:not([class]) {
 img,
 picture {
   max-width: 100%;
+  width: 100%;
+  height: auto;
   display: block;
+}
+
+figcaption {
+  color: var(--clr-neutral-400);
+  font-style: italic;
+  font-size: var(--fs-300);
+  text-align: center;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -61,6 +70,69 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+kbd {
+  background-color: var(--clr-neutral-100);
+  border-radius: 3px;
+  border: 1px solid var(--clr-neutral-300);
+  box-shadow: 0 1px 1px var(--clr-accent-100), 0 2px 0 0 var(--clr-accent-200) inset;
+  color: var(--clr-neutral-500);
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+em {
+  color: var(--clr-accent-300);
+}
+
+pre {
+  padding: 1em;
+  overflow: auto;
+  border-radius: 4px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  margin: 0.75em 0;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Courier New', 'Courier', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  // quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
