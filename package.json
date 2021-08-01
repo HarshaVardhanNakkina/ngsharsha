@@ -13,7 +13,7 @@
     "build:sass": "cross-env NODE_ENV=production sass src/sass:src/css",
     "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
     "dev": "concurrently \"pnpm:watch:sass\" \"pnpm:watch:eleventy\"",
-    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store && npx pnpm add -D pnpm || echo skipping pnpm install",
+    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store && npx pnpm add -D pnpm -r --store=node_modules/.pnpm-store || echo skipping pnpm install",
     "build": "concurrently \"pnpm:build:sass\" \"pnpm:build:eleventy\"",
     "postbuild": "postcss _site/css/*.css -u autoprefixer postcss-csso -r"
   },
