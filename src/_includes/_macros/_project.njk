@@ -1,7 +1,7 @@
 {% macro project(params) %}
 	<div class="project flow">
 		<div class="project__img">
-			<img src="{{ params.thumbnail | url }}" alt="project thumbnail" loading="lazy" width="600">
+			<img src="{{ params.thumbnail }}" alt="{{ params.title }}" loading="lazy" width="600">
 		</div>
 		<div class="project__info flow">
 			<h3 class="project__title">{{ params.title }}</h3>
