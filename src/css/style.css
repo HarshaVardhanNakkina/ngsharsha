@@ -394,6 +394,15 @@ strong {
   }
 }
 
+.rotate-icon {
+  transform: rotate(0turn);
+  transition: transform 350ms ease-in-out;
+}
+
+[data-theme=dark] .rotate-icon {
+  transform: rotate(1turn);
+}
+
 .intro {
   margin-inline: auto;
   text-align: center;
